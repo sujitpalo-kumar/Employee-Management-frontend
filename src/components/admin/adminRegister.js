@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const AdminRegister = () => {
   let [admin, setAdmin] = useState({
     name: "",
@@ -53,9 +54,11 @@ const AdminRegister = () => {
   };
 
   // Register Employee
+  // eslint-disable-next-line no-unused-vars
   let RegisterAdmin = (event) => {
     event.preventDefault();
     let dataURL = `http://localhost:8080/app/user/adminSignUp`;
+    // eslint-disable-next-line no-undef
     Axios.post(dataURL, admin)
       .then((response) => {
         setAdmin(true);
