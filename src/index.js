@@ -1,16 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+
 import "./index.css";
+
+import { HashRouter } from "react-router-dom";
+
 import App from "./App";
-import "bootstrap/dist/css/bootstrap.css";
-import "mdbootstrap/css/bootstrap.css";
-import "mdbootstrap/css/mdb.css";
-import reportWebVitals from "./reportWebVitals";
+
+import { Provider } from "react-redux";
+
+import { store } from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <HashRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HashRouter>
 );
-reportWebVitals();
